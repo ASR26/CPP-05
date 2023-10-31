@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 10:54:41 by asolano-          #+#    #+#             */
+/*   Updated: 2023/10/31 11:37:10 by asolano-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+
+class Bureaucrat
+{
+private:
+	const std::string	_name;
+	int	_grade;
+public:
+	Bureaucrat();
+	Bureaucrat(const std::string name, int grade);
+	Bureaucrat(const Bureaucrat &bur);
+	Bureaucrat &operator=(const Bureaucrat &bur);
+	~Bureaucrat();
+	const std::string getName();
+	int	getGrade();
+	void	increment();
+	void	decrement();
+};
+
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bur);
