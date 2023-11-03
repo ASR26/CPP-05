@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:54:41 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/02 11:30:45 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:39:11 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	~Bureaucrat();
 	const std::string getName() const;
 	int	getGrade() const;
-	void signForm(Form form);
+	void signForm(class Form &form);
 
 	class	GradeTooHighException: public std::exception 
 	{

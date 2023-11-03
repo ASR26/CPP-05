@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:19 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/02 11:29:28 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:39:23 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
 class Form
 {
 	private:
@@ -24,16 +25,16 @@ class Form
 		const int _exgrade;
 	public:
 		Form();
-		Form(const std::string name, bool sign, const int signgrade, const int exgrade);
+		Form(const std::string name, const int signgrade, const int exgrade);
 		Form(const Form &form);
 		Form &operator=(const Form &form);
 		~Form();
 
-		const std::string getName() const;
-		bool getSign();
-		const int getSignGrade() const;
-		const int getExGrade() const;
-		void	beSigned(Bureaucrat bur);
+		std::string getName() const;
+		bool getSign() const;
+		int getSignGrade() const;
+		int getExGrade() const;
+		void	beSigned(class Bureaucrat &bur);
 
 	class	GradeTooHighException: public std::exception 
 	{

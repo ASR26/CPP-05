@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:54:44 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/02 11:02:28 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:44:09 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,18 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &copy)
 	return (os);
 }
 
+void	Bureaucrat::signForm(Form &form)
+{
+	if (this->getGrade() <= form.getSignGrade())
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	else
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is too low"<< std::endl;
+}
+
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Bureaucrat destructor called" << std::endl;
 }
