@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:26 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/03 10:39:47 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:37:15 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ Form::Form(const Form &form): _name(form.getName()), _sign(form.getSign()), _sig
 		throw Form::GradeTooHighException();
 	else if (this->getSignGrade() > 150)
 		throw Form::GradeTooLowException();
+}
+
+Form &Form::operator=(const Form &form)
+{
+	this->_sign = form.getSign();
+	return *this;
 }
 
 const char	*Form::GradeTooHighException::what() const throw() 
