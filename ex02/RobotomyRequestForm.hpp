@@ -10,23 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBORTOMYREQUESTFORM_HPP
+# define ROBORTOMYREQUESTFORM_HPP
 
 # include "AForm.hpp"
 
-class ShrubberyCreationForm: public AForm
+class RobotomyRequestForm: public AForm
 {
 	private:
 		const std::string _target;
+		int	_counter;
 	public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(const std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &form);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
-		~ShrubberyCreationForm();
+		RobotomyRequestForm();
+		RobotomyRequestForm(const std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &form);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
+		~RobotomyRequestForm();
 
 		const std::string getTarget() const;
+		int	getCounter();
 		void execute(Bureaucrat const & executor) const;
 };
 

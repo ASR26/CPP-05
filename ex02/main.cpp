@@ -6,18 +6,21 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:44:29 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/03 11:13:57 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:09:58 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-# include "Form.hpp"
+# include "AForm.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
 
 int	main()
 {
 	Bureaucrat John("John", 2);
 	Bureaucrat Tom("Tom", 149);
-	Form Formulario("ABC", 50, 50);
+	PresidentialPardonForm Formulario("ABC");
 	
 	try
 	{
@@ -53,5 +56,5 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	Form Formulario2(Formulario);
+	//AForm Formulario2(Formulario);
 }

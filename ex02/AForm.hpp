@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:19 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/07 11:44:32 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:24:44 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 
 class AForm
 {
-	protected:
+	private:
 		const std::string _name;
 		bool	_sign;
 		const int _signgrade;
 		const int _exgrade;
+		std::string _target;
 	public:
 		AForm();
 		AForm(const std::string name, const int signgrade, const int exgrade);
@@ -34,6 +35,9 @@ class AForm
 		bool getSign() const;
 		int getSignGrade() const;
 		int getExGrade() const;
+		std::string getTarget() const;
+		void setTarget(std::string target);
+		void	setSign(bool s);
 		void	beSigned(class Bureaucrat &bur);
 
 		class	GradeTooHighException: public std::exception 

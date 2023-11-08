@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:13 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/07 11:57:00 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/08 08:59:54 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)
 	if (executor.getGrade() > this->getExGrade())
 		throw ShrubberyCreationForm::GradeTooLowException();
 	std::ofstream newFile(this->getTarget()+ "_shrubbery");
-	newFile << "                                              .         ;  
+	newFile << "
                  .              .              ;%     ;;   
                    ,           ,                :;%  %;   
                     :         ;                   :;%;'     .,   
@@ -81,4 +81,9 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
+}
+
+const std::string ShrubberyCreationForm::getTarget() const
+{
+	return this->_target;
 }

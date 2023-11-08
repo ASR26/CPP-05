@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:26 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/07 11:47:00 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:25:49 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@ AForm::AForm(const std::string name, const int signgrade, const int exgrade): _n
 	std::cout << "Signed: " << this->getSign() << std::endl;
 	std::cout << "Sign grade: " << this->getSignGrade() << std::endl;
 	std::cout << "Execution grade: " << this->getExGrade() << std::endl;
-	if (this->getExGrade() < 1)
+	if (this->getExGrade() < 1 || this->getSignGrade() < 1)
 		throw AForm::GradeTooHighException();
-	else if (this->getExGrade() > 150)
-		throw AForm::GradeTooLowException();
-		if (this->getSignGrade() < 1)
-		throw AForm::GradeTooHighException();
-	else if (this->getSignGrade() > 150)
+	else if (this->getExGrade() > 150 || this->getSignGrade() > 150)
 		throw AForm::GradeTooLowException();
 }
 
@@ -45,13 +41,9 @@ AForm::AForm(const AForm &aform): _name(aform.getName()), _sign(aform.getSign())
 	std::cout << "Signed: " << this->getSign() << std::endl;
 	std::cout << "Sign grade: " << this->getSignGrade() << std::endl;
 	std::cout << "Execution grade: " << this->getExGrade() << std::endl;
-	if (this->getExGrade() < 1)
+	if (this->getExGrade() < 1 || this->getSignGrade() < 1)
 		throw AForm::GradeTooHighException();
-	else if (this->getExGrade() > 150)
-		throw AForm::GradeTooLowException();
-	if (this->getSignGrade() < 1)
-		throw AForm::GradeTooHighException();
-	else if (this->getSignGrade() > 150)
+	else if (this->getExGrade() > 150 || this->getSignGrade() > 150)
 		throw AForm::GradeTooLowException();
 }
 
@@ -89,11 +81,33 @@ bool AForm::getSign() const
 	return this->_sign;
 }
 
+std::string AForm::getTarget() const
+{
+	return this->_target;
+}
+
 void AForm::beSigned(Bureaucrat &bur)
 {
 	if (bur.getGrade() > this->getSignGrade())
 		throw AForm::GradeTooLowException();
 	this->_sign = true;
+}
+
+AForm &AForm::operator=(const AForm &form)
+{
+	this->_sign = form.getSign();
+	return *this;
+}
+
+
+void AForm::setTarget(std::string target)
+{
+	this->_target = target;
+}
+
+void	AForm::setSign(bool s)
+{
+	this->_sign = s;
 }
 
 AForm::~AForm()

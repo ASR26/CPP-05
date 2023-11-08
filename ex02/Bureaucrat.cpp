@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:54:44 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/03 10:44:09 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:08:13 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,35 @@ int Bureaucrat::getGrade() const
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &copy)
 {
-	std::cout << copy.getName() << ", bureaucrat grade " << copy.getGrade() << std::endl;
+	os << copy.getName() << ", bureaucrat grade " << copy.getGrade() << std::endl;
 	return (os);
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
-	if (this->getGrade() <= form.getSignGrade())
+	try
 	{
 		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
-	else
+	catch(const std::exception& e)
+	{
 		std::cout << this->getName() << " couldn't sign " << form.getName() << " because his grade is too low"<< std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because: " << e.what() << std::endl;
+	}
+	
 }
 
 Bureaucrat::~Bureaucrat()
