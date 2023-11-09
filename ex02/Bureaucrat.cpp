@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:54:44 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/08 11:08:13 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:31:14 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	Bureaucrat::signForm(AForm &form)
 	}
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(AForm const & form) const
 {
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:54:41 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/08 11:20:33 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:06:37 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ public:
 
 	void	increment();
 	void	decrement();
-	void executeForm(AForm const & form);
+	void executeForm(AForm const & form) const;
 };
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bur);
