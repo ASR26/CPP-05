@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:59:42 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/14 08:44:50 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:01:28 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ Intern::~Intern()
 {
 }
 
-AForm* Intern::makeForm(std::string type, std::string target)
+AForm* Intern::makeForm(std::string type, std::string target) const
 {
 	std::string types[3] = {"shrubbery creation", "robotomy request", "president pardon"};
-	AForm *(Intern::*funct[3])(std::string) = {&Intern::createPardon, &Intern::createRobo, &Intern::createShrub};
+	AForm *(Intern::*funct[3])(std::string) const = {&Intern::createPardon, &Intern::createRobo, &Intern::createShrub};
 	int i = 0;
 	while (i < 3)
 	{
@@ -45,17 +45,17 @@ AForm* Intern::makeForm(std::string type, std::string target)
 	std::cout << "Form " << type << " does not exist" << std::endl;
 	return (NULL);
 }
-AForm* Intern::createShrub(std::string target)
+AForm* Intern::createShrub(std::string target) const
 {
 	return new ShrubberyCreationForm(target);
 }
 
-AForm* Intern::createPardon(std::string target)
+AForm* Intern::createPardon(std::string target) const
 {
 	return new PresidentialPardonForm(target);
 }
 
-AForm* Intern::createRobo(std::string target)
+AForm* Intern::createRobo(std::string target) const
 {
 	return new RobotomyRequestForm(target);
 }

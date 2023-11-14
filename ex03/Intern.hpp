@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:59:46 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/14 08:42:13 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/14 10:59:30 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Intern
 		Intern(const Intern &intern);
 		Intern &operator=(const Intern &intern);
 		~Intern();
-		AForm* makeForm(std::string type, std::string target);
-		AForm* createShrub(std::string target);
-		AForm* createPardon(std::string target);
-		AForm* createRobo(std::string target);
+		AForm* makeForm(std::string type, std::string target) const;
+		AForm* createShrub(std::string target) const;
+		AForm* createPardon(std::string target) const;
+		AForm* createRobo(std::string target) const;
 };
 
 #endif
