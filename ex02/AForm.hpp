@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:19 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/09 10:05:49 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/14 08:29:36 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm
 		AForm(const std::string name, const int signgrade, const int exgrade);
 		AForm(const AForm &aform);
 		AForm &operator=(const AForm &aform);
-		~AForm();
+		virtual ~AForm();
 
 		std::string getName() const;
 		bool getSign() const;
