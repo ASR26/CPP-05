@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:44:29 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/03 11:13:57 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/23 08:31:19 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	std::cout << Formulario << std::endl;
 	Form Formulario2(Formulario);
 }

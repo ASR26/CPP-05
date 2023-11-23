@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:59:42 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/21 08:42:02 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:12:54 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Intern::~Intern()
 
 AForm* Intern::makeForm(std::string type, std::string target) const
 {
-	std::string types[3] = {"shrubbery creation", "robotomy request", "president pardon"};
+	std::string types[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	AForm *(Intern::*funct[3])(std::string) const = {&Intern::createShrub, &Intern::createRobo, &Intern::createPardon};
 	int i = 0;
 	while (i < 3)

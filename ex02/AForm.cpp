@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:26 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/08 11:25:49 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:11:15 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,15 @@ void AForm::setTarget(std::string target)
 void	AForm::setSign(bool s)
 {
 	this->_sign = s;
+}
+
+std::ostream &operator<<(std::ostream &os, const Form &copy)
+{
+	std::cout << "Name: " << copy.getName() << std::endl;
+	std::cout << "Signed: " << copy.getSign() << std::endl;
+	std::cout << "Sign grade: " << copy.getSignGrade() << std::endl;
+	std::cout << "Execution grade: " << copy.getExGrade() << std::endl;
+	return (os);
 }
 
 AForm::~AForm()

@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:19 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/03 10:39:23 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/23 08:30:11 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ class Form
 	{
 		virtual const char *what() const throw();
 	};
+	
 };
+
+std::ostream &operator<<(std::ostream &os, const Form &copy);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:19 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/14 08:29:25 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:12:39 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ class AForm
 		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
+std::ostream &operator<<(std::ostream &os, const AForm &copy);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asolano- <asolano-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:16:26 by asolano-          #+#    #+#             */
-/*   Updated: 2023/11/08 10:37:15 by asolano-         ###   ########.fr       */
+/*   Updated: 2023/11/23 08:31:41 by asolano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,15 @@ void Form::beSigned(Bureaucrat &bur)
 	if (bur.getGrade() > this->getSignGrade())
 		throw Form::GradeTooLowException();
 	this->_sign = true;
+}
+
+std::ostream &operator<<(std::ostream &os, const Form &copy)
+{
+	std::cout << "Name: " << copy.getName() << std::endl;
+	std::cout << "Signed: " << copy.getSign() << std::endl;
+	std::cout << "Sign grade: " << copy.getSignGrade() << std::endl;
+	std::cout << "Execution grade: " << copy.getExGrade() << std::endl;
+	return (os);
 }
 
 Form::~Form()
